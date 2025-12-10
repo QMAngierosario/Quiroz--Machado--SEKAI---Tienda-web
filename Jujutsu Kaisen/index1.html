@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jujutsu Kaisen - Full Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <audio id="background-music" src="Images/Jujutsu Kaisen Season 2 OP.2 Full  SPECIALZ - Sub. Español AMV.mp3" loop muted></audio>
+              <div class="custom-cursor" aria-hidden="true"></div>
+
+
+
+    <img src="Images/fondo_1.png" class="bg-image" alt="Fondo JJK">
+     <div class="custom-cursor" aria-hidden="true"></div>
+<header class="navtop">
+    <div class="nav-left">
+        <img src="Images/planeta.png" alt="Logo" class="logo">
+    </div>
+
+    <nav class="menu-top">
+        <a href="../SEKAIREAL/indexS.html">Servicios</a>
+        <a href="../SEKAIREAL/indexC.html">Contáctanos</a>
+        <a href="../SEKAIREAL/indexP.html">Próximamente</a>
+    </nav>
+</header>
+
+<main>
+    <div class="menu-container">
+        <div class="menu-btn" id="menu-btn">
+           <i class="fas fa-bars"></i>
+        </div>
+
+        <nav class="sidebar" id="sidebar">
+            <a href="../SEKAIREAL/index1.html" >Home</a>
+            <a href="../Hanako kun/index.html">Jibaku Shonen Hanako Kun</a>
+            <a href="../Jujutsu Kaisen/index1.html">Jujutsu Kaisen</a>
+            <a href="../Alien Stage/index.html">Alien Stage</a>
+        </nav>
+    </div>
+    <main class="hero">
+        <div class="hero-content">
+            <h1>JUJUTSU <span>KAISEN</span></h1>
+            <p>
+                Jujutsu Kaisen sigue a Yuji Itadori, un estudiante que se convierte en el 
+                recipiente del rey de las maldiciones, Ryomen Sukuna, al ingerir uno de 
+                sus dedos. Ahora debe unirse a la Escuela de Hechiceros de Jujutsu para ayudar
+                 a combatir a las maldiciones, unos espíritus nacidos de emociones negativas,
+                  mientras trabaja en secreto para encontrar y consumir los otros dedos de Sukuna
+                   y así evitar su resurrección
+            </p>
+        </div>
+    </main>
+
+    <div class="section-separator">
+        <h2>ELIGE A TU PERSONAJE</h2>
+    </div>
+
+    <div class="main-container">
+        <div class="bg-circle"></div>
+
+        <div class="carousel-container">
+            <ul class="character-wheel" id="characterWheel">
+                <li class="wheel-item active" onclick="selectCharacter(0)">
+                    <div class="thumb-border">
+                        <img src="Images/gojo1.png" alt="Thumb 1">
+                    </div>
+                </li>
+                <li class="wheel-item" onclick="selectCharacter(1)">
+                    <div class="thumb-border">
+                        <img src="Images/megumi2.png" alt="Thumb 2">
+                    </div>
+                </li>
+                <li class="wheel-item" onclick="selectCharacter(2)">
+                    <div class="thumb-border">
+                        <img src="Images/yuji3.png" alt="Thumb 3">
+                    </div>
+                </li>
+                <li class="wheel-item" onclick="selectCharacter(3)">
+                    <div class="thumb-border">
+                        <img src="Images/nobara4.png" alt="Thumb 4">
+                    </div>
+                </li>
+                <li class="wheel-item" onclick="selectCharacter(4)">
+                    <div class="thumb-border">
+                        <img src="Images/sukuna5.png" alt="Thumb 5">
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="character-display">
+            <h1 class="bg-name" id="bgName">GOJO</h1>
+
+            <div class="hero-image-container">
+                <img src="Images/gojo.png" id="heroImage" class="hero-img">
+            </div>
+
+            <div class="info-panel">
+                <h2 class="hero-name" id="heroName">SATORU GOJŌ</h2>
+                <div class="stars">★★★★</div>
+                
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="label">Rounds</span>
+                        <span class="value" id="statRounds">78</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Time</span>
+                        <span class="value" id="statTime">38:24</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Win Rate</span>
+                        <span class="value" id="statRate">100%</span>
+                    </div>
+                </div>
+
+                <p class="hero-bio" id="heroBio">
+                    El Hechicero Supremo. Maestro de las artes místicas, manipula el tiempo y el espacio para proteger la realidad.
+                </p>
+                <button class="shop-btn" id="shopBtn">Ver Productos</button>
+            </div>
+        </div>
+    </div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
