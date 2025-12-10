@@ -1,0 +1,282 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+/* ==============================
+        BANNER / BASE
+============================== */
+
+.banner{
+    width: 100%;
+    height: 120vh;
+    text-align: center;
+    overflow: visible;
+    position: relative;
+}
+
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+
+    transform: perspective(1300px) rotateX(-22deg) rotateY(0deg);
+
+    transition: transform 0.9s cubic-bezier(.2,.9,.2,1);
+    z-index: 4;
+}
+
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+/* ==============================
+        ITEMS EN EL CARRUSEL
+============================== */
+
+.banner .slider .item{
+    position: absolute;
+    inset: 0;
+    transform:
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+    cursor: pointer;
+    pointer-events: auto;
+    perspective: 1000px;
+    transition: transform 0.6s ease, filter 0.4s ease;
+    will-change: transform;
+}
+
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==============================
+        CONTENIDO
+============================== */
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 120vh;
+}
+
+.banner-text {
+    position: absolute;
+    top: 10%;      
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.title-winner {
+    font-family: 'ICA Rubrik';
+    font-size: 16em;
+    line-height: 1em;
+    color: rgba(119, 122, 139, 0.4);
+    margin-top: 190px;
+}
+
+.title-winner::after {
+    position: absolute;
+    inset: 0;
+    content: attr(data-content);
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+    margin-top: 190px;
+}
+
+.author {
+    padding-right: 850px;
+    padding-top: 550px;
+    font-family: Poppins;
+    pointer-events: auto;
+}
+
+ .banner-model {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 120vh;
+    z-index: 3;
+    pointer-events: none;
+    padding-top: 40px;
+}
+
+.model {
+    background-image: url(Images/ia-central.png);
+    background-size: auto 140%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Para que las tarjetas del carrusel NO SE CORTEN --- */
+.banner .slider{
+    overflow: visible;   
+    z-index: 4;                      
+    pointer-events: auto;            
+}
+
+/* ==============================
+        RESPONSIVE
+============================== */
+
+@media screen and (max-width: 1023px) {
+    .banner .slider{
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+    }
+    .banner .slider .item{
+        transform:
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(300px);
+    }
+    .banner .content h1{
+        text-align: center;
+        width: 100%;
+        font-size: 7em;
+    }
+    .banner .content .author{
+        color: #fff;
+        padding: 20px;
+        text-shadow: 0 10px 20px #fcfcfc;
+        z-index: 2;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .banner .slider{
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+    }
+    .banner .slider .item{
+        transform:
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(180px);
+    }
+    .banner .content h1{
+        font-size: 4rem;
+    }
+}
+
+.banner .slider {
+    --current-rotation: 0deg;
+    transition: transform 1s ease;
+}
+
+
+/* ==============================
+        FLIP CARD
+============================== */
+
+.item-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    pointer-events: auto; 
+}
+
+.banner .slider .item:hover .item-inner {
+    transform: rotateY(180deg);
+}
+
+.item-front,
+.item-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.item-back {
+    transform: rotateY(180deg);
+    background: #0d111c;
+    color: #fff;
+    justify-content: center;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+
+
+
+.item-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.item-text {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.item-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #7aaeff;
+    text-decoration: none;
+}
+
+.item-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    margin-top: 15px;
+    background: #41228b;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, background 0.3s ease;
+    pointer-events: auto;
+}
+
+.item-btn:hover {
+    background: #20184e;
+    transform: scale(1.07);
+}
+
+
+/* ==============================
+        TARJETA ACTIVA
+============================== */
+
+.banner .slider .item.active{
+    pointer-events: auto;
+    transform: translateZ(120px) scale(1.06) !important;
+    z-index: 999;
+    filter: drop-shadow(0 30px 50px rgba(0,0,0,0.7));
+}
+
+.banner .slider .item:not(.active) .item-front{
+    filter: saturate(0.85) brightness(0.9);
+}
+
