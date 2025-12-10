@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sekai Compras - Jujutsu Kaisen</title>
+  <link rel="stylesheet" href="stylesJJKT.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="custom-cursor" aria-hidden="true"></div>
+<header class="navtop">
+    <div class="nav-left">
+        <img src="../img/planeta.png" alt="Logo" class="logo">
+    </div>
+
+    <nav class="menu-top">
+        <a href="../SEKAIREAL/indexS.html">Servicios</a>
+        <a href="../SEKAIREAL/indexC.html">Contáctanos</a>
+        <a href="../SEKAIREAL/indexP.html">Próximamente</a>
+    </nav>
+</header>
+
+<main>
+    <div class="menu-container">
+        <div class="menu-btn-alt" id="menu-btn">
+            <i class="fas fa-bars"></i>
+
+          <div id="cartIcon" class="cart-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/126/126083.png" style="width:32px;">
+            <span id="cartCount">0</span>
+          </div>
+
+        </div>
+
+        <nav class="sidebar" id="sidebar">
+            <a href="../SEKAIREAL/index1.html" >Home</a>
+            <a href="../Hanako kun/index.html">Jibaku Shonen Hanako Kun</a>
+            <a href="../Jujutsu Kaisen/index1.html">Jujutsu Kaisen</a>
+            <a href="../Alien Stage/index.html">Alien Stage</a>
+        </nav>
+    </div>
+
+<!-- TOP BANNER ESTÁTICO (Jujutsu-style) -->
+<section class="top-banner" aria-label="Banner principal - Jujutsu Kaisen">
+  <div class="top-banner-inner">
+    <div class="top-banner-content">
+      <div class="badge">Productos originales</div>
+      <h1 class="banner-title">Jujutsu Kaisen</h1>
+      <p class="banner-sub">Compra las mejores marcas y al mejor precio con envíos.</p>
+
+      <div class="banner-actions">
+      
+        <a class="btn btn-ghost" href="../Jujutsu Kaisen/index1.html">Ver personajes</a>
+      </div>
+    </div>
+
+    <div class="top-banner-figure">
+      <img src="../img/grupo2.png" alt="Jujutsu Kaisen" />
+    </div>
+  </div>
+</section>
+
+
+<!-- /TOP BANNER -->
+
+<main class="container">
+
+<!-- Characters -->
+<section class="section characters-section">
+  <div class="section-title">
+    <h4>Personajes</h4>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="characters-header">
+    <button id="btnVerTodos" class="ver-todos-btn">Ver todos</button>
+  </div>
+  
+  <!-- AQUÍ AGREGO LOS PERSONAJES -->
+  <div class="characters" id="charactersRow">
+
+    <div class="character-btn" data-personaje="gojo">
+      <img src="../img/gojo.png">
+      <span>Gojo</span>
+    </div>
+
+    <div class="character-btn" data-personaje="megumi">
+      <img src="../img/megumi.png">
+      <span>Megumi</span>
+    </div>
+
+    <div class="character-btn" data-personaje="yuji">
+      <img src="../img/yuji.png">
+      <span>Yuji</span>
+    </div>
+
+    <div class="character-btn" data-personaje="nobara">
+      <img src="../img/nobara.png">
+      <span>Nobara</span>
+    </div>
+
+    <div class="character-btn" data-personaje="sukuna">
+      <img src="../img/sukuna.png">
+      <span>Sukuna</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products-wrap" id="productsWrap">
+  <div class="section-title">
+    <h4>Productos</h4>
+    <div class="section-divider"></div>
+  </div>
+    <div class="products-grid" id="productsGrid">
+  </div>
+</section>
+
+</main>
+
+
+<!-- Cart sidebar -->
+<aside id="cartPage" class="cart-page">
+  <h3>Tu Carrito</h3>
+
+  <div id="cartItems"></div>
+
+  <div class="coupon-box">
+    <label>
+      Cupon / Código:
+      <input id="coupon" class="coupon-input">
+    </label>
+    <button id="applyCoupon" class="apply-coupon-btn">Aplicar</button>
+  </div>
+
+  <div class="cart-total">
+    Total: <span id="cartTotal">$0.00</span>
+  </div>
+
+  <button class="checkout-btn" id="checkoutBtn">Pagar</button>
+
+  <div style="height:40px"></div>
+</aside>
+
+
+<!-- Success overlay -->
+<div id="successOverlay" class="success-overlay">
+  <div class="card" id="successCard">
+    <h3>Compra exitosa 🎉</h3>
+    <p id="successText">Gracias por tu compra. Tiempo estimado de envío: 3 días hábiles.</p>
+    <button onclick="closeSuccess()" class="success-close-btn">Cerrar</button>
+  </div>
+</div>
+
+<script src="mainJJKT.js"></script>
+
+</body>
+</html>
